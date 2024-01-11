@@ -16,7 +16,7 @@ const Hero = () => {
                     <div className="column">
                         <h1 className='text-4xl font-bold'>Local Government and Urban Development</h1>
                         <p className='my-8'>Empowering Communities, Building Futures: <br></br> Transforming Urban Landscapes with Dedication and Innovation in <br /> Local Government and Urban Development.</p>
-                        <Link className='button' href={'/courses'}>Explore Courses</Link>
+                        <Link className='button' href={'/courses'}>Explore Courses </Link>
                     </div>
                 </div>
             </div>
