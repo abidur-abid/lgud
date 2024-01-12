@@ -1,7 +1,9 @@
 import React from 'react';
-import graduation from '../assets/graduation.png'
+import graduation from '../assets/graduation2.png'
 import Image from 'next/image';
 import Link from 'next/link';
+
+
 
 
 

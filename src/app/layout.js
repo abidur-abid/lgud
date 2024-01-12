@@ -12,9 +12,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-[url('../assets/bg.png')]">
       <body className={inter.className}>
-        <main className='max-w-6xl mx-auto'>
+        <main className="max-w-6xl mx-auto">
           <Navbar/>
             {children}
           <Footer/>

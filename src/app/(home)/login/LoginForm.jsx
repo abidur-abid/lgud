@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import Image from 'next/image';
-import login from '../../../assets/login.png';
+import login from '../../../assets/login2.png';
 import { useForm } from 'react-hook-form';
 import Link from 'next/link';
 import GoogleLogin from './GoogleLogin';
@@ -26,7 +26,7 @@ const LoginForm = () => {
           <div className="column">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
 
-              <input className='border-2 focus:outline-none border-primaryColor secondaryColor rounded-full text-center text-xl px-10 py-2' type='email' placeholder='Enter Your Email' name='email'
+              <input className='border-2 focus:outline-none bg-transparent border-primaryColor secondaryColor rounded-full text-center text-xl px-10 py-2' type='email' placeholder='Enter Your Email' name='email'
               {...register("email", {
                 required: true,
                 pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/,
@@ -39,7 +39,7 @@ const LoginForm = () => {
               </span>
             )} <br />
 
-              <input className='border-2 focus:outline-none border-primaryColor secondaryColor rounded-full text-center text-xl px-10 py-2 my-4' type='password' placeholder='Enter Your PassWord' name='password'
+              <input className='border-2 focus:outline-none bg-transparent border-primaryColor secondaryColor rounded-full text-center text-xl px-10 py-2 my-1' type='password' placeholder='Enter Your PassWord' name='password'
               {...register("password", { required: true, minLength: 6 })}
               />
               <br />
@@ -51,7 +51,7 @@ const LoginForm = () => {
               <input className=' button w-full  rounded-full text-center text-xl px-10 py-2 border-primaryColor' type='submit'/>
             </form>
             <GoogleLogin/>
-            <p className='text-center  mt-16 secondaryColor'><Link href={''}> If You Don't Have Any Account, <br /> Please Register.</Link></p>
+            <p className='text-center  mt-8 secondaryColor'><Link href={''}> If You Don't Have Any Account, <br /> Please Register.</Link></p>
           </div>
         </div>
       </div>

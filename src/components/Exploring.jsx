@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { RiGraduationCapFill } from "react-icons/ri";
-import courses from '../assets/courses.png'
+import courses from '../assets/courses2.png'
 
 
 const Exploring = () => {

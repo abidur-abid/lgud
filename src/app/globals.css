@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 /* This code for container */
 .container{
   @apply  py-5
@@ -18,7 +20,7 @@
   @apply bg-primaryColor text-white px-10 py-3 rounded-full
 }
 .button:hover{
-  @apply bg-white text-primaryColor border-2 border-primaryColor px-10 py-3 rounded-full
+  @apply bg-transparent text-primaryColor border-2 border-primaryColor px-10 py-3 rounded-full
 }
 
 /* This code for text color */
