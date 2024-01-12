@@ -4,7 +4,7 @@
 
 /* This code for container */
 .container{
-  @apply px-20 py-5
+  @apply  py-5
 }
 
 /* This code for row */
