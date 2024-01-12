@@ -20,3 +20,9 @@
 .button:hover{
   @apply bg-white text-primaryColor border-2 border-primaryColor px-10 py-3 rounded-full
 }
+
+/* This code for text color */
+
+.secondaryColor{
+  @apply text-gray-500
+}

@@ -17,7 +17,7 @@ const Navbar = () => {
                     <div className="column">
                         <h1 className='text-3xl font-extrabold text-primaryColor'>LGUD</h1>
                     </div>
-                    <div className="column flex justify-between gap-10 items-center">
+                    <div className="column flex justify-between gap-10 items-center secondaryColor">
                         <Link className='uppercase font-semibold flex items-center' href={'/'}> <MdHome /> Home</Link>
                         <Link className='uppercase font-semibold flex items-center' href={'/courses'}> <FaDiscourse /> Courses</Link>
                         <Link className='uppercase font-semibold flex items-center' href={'/teachers'}> <LiaChalkboardTeacherSolid /> Teachers</Link>

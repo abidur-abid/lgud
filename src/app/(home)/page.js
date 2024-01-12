@@ -1,3 +1,4 @@
+import Exploring from '@/components/Exploring'
 import Gif from '@/components/Gif'
 import Hero from '@/components/Hero'
 import Navbar from '@/components/Navbar'
@@ -8,6 +9,8 @@ export default function Home() {
     <>
       <Navbar/>
       <Hero/>
+      <Gif/>
+      <Exploring/>
       <Gif/>
     </>
   )
