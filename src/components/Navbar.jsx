@@ -11,7 +11,7 @@ import { IoLogIn } from "react-icons/io5";
 
 const Navbar = () => {
     return (
-        <div className="section">
+        <div className="section sticky top-0">
             <div className="container">
                 <div className="row">
                     <div className="column">
