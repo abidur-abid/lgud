@@ -16,9 +16,9 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="section">
+    <div className="section my-20">
       <div className="container">
-        <div className="row">
+        <div className="flex justify-center items-center">
           <div className="column">
             {/* Use the Image component correctly */}
             <Image src={login} alt="Login Image" />
@@ -26,32 +26,32 @@ const LoginForm = () => {
           <div className="column">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
 
-              <input className='border-2 focus:outline-none bg-transparent border-primaryColor secondaryColor rounded-full text-center text-xl px-10 py-2' type='email' placeholder='Enter Your Email' name='email'
+              <input className='border-2 w-full focus:outline-none bg-transparent border-primaryColor secondaryColor rounded-full text-center text-xl px-10 py-2' type='email' placeholder='Enter Your Email' name='email'
               {...register("email", {
                 required: true,
                 pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/,
               })}
             />
-            <br />
+            
             {errors.email && (
               <span className="text-red-500 text-base mt-1 mx-auto">
                 Please enter a valid email address.
               </span>
-            )} <br />
+            )}
 
-              <input className='border-2 focus:outline-none bg-transparent border-primaryColor secondaryColor rounded-full text-center text-xl px-10 py-2 my-1' type='password' placeholder='Enter Your PassWord' name='password'
+              <input className='border-2 w-full focus:outline-none bg-transparent border-primaryColor secondaryColor rounded-full text-center text-xl px-10 py-2 my-1' type='password' placeholder='Enter Your PassWord' name='password'
               {...register("password", { required: true, minLength: 6 })}
               />
-              <br />
+              
               {errors.password && (
-                <span className="text-red-500 text-base mt-1">
+                <span className="text-red-500 text-base mt-1 mx-auto">
                   Please enter a password.
                 </span>
-              )} <br />
+              )} 
               <input className=' button w-full  rounded-full text-center text-xl px-10 py-2 border-primaryColor' type='submit'/>
             </form>
             <GoogleLogin/>
-            <p className='text-center  mt-8 secondaryColor'><Link href={''}> If You Don't Have Any Account, <br /> Please Register.</Link></p>
+            <p className='text-center  mt-8 secondaryColor'><Link href={'/register'}> If You Don't Have Any Account, <br /> Please Register.</Link></p>
           </div>
         </div>
       </div>
