@@ -17,7 +17,7 @@
 /* This code for button */
 
 .button{
-  @apply bg-primaryColor text-white px-10 py-3 rounded-full
+  @apply bg-primaryColor border-2 border-primaryColor text-white px-10 py-3 rounded-full
 }
 .button:hover{
   @apply bg-transparent text-primaryColor border-2 border-primaryColor px-10 py-3 rounded-full

@@ -5,14 +5,42 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import registration from '../../../assets/register.png'
 import Gif from '@/components/Gif';
+import useAuth from '@/hooks/useAuth';
 
 const Register = () => {
 
+  
+    const {createUser, profileUpdate} = useAuth();
+
     const {register, handleSubmit, formState: {errors}} = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-  };
+    const onSubmit = async (data) => {
+        
+        let formData = new FormData();
+        formData.append("image", data.file[0]);
+        
+        const {name, email, password,} = data;
+    
+        try {
+            const res = await fetch(`https://api.imgbb.com/1/upload?key=${process.env.NEXT_PUBLIC_imageApi}`, {
+                method: "POST",
+                body: formData,
+            });
+            if (!res.ok) throw new Error("Failed to image upload");
+            const responseData = await res.json();
+            await createUser(email, password);
+            await profileUpdate({
+                displayName: name,
+                photoUrl: responseData.data.url
+            })
+           
+        } catch (error) {
+            console.log(error.message);
+        }
+    };
+    
+
+  
 
     return (
        <>
@@ -65,15 +93,16 @@ const Register = () => {
                     </span>
                     )} 
 
-                    <input type="file" className='border-2 w-full focus:outline-none bg-transparent border-primaryColor secondaryColor rounded-full text-center text-xl px-10 py-2' placeholder='Put Your Profile Picture' name='file'
+                    <input type="file"  className=' border-2 w-full focus:outline-none bg-transparent border-primaryColor secondaryColor rounded-full text-center text-xl px-10 py-2' placeholder='Put Your Profile Picture' name='file'
                     {...register("file")}
                     />
                  
-                    {errors.duration && (
-                    <span className="text-red-500 text-base mt-1 mx-auto">
-                    Please enter your profile picture.
-                    </span>
-                    )} 
+                    {errors.file && (
+                        <span className="text-red-500 text-base mt-1 mx-auto">
+                            Please enter your profile picture.
+                        </span>
+                    )}
+ 
 
                     <input className='border-2 w-full focus:outline-none bg-transparent border-primaryColor secondaryColor rounded-full text-center text-xl px-10 py-2' type='email' placeholder='Enter Your Email' name='email'
                     {...register("email", {
