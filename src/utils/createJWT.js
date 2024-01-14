@@ -1,0 +1,22 @@
+
+
+const createJWT = async(payload) => {
+    try {
+       const res = fetch('/api/auth', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+       })
+
+       const data = await res.json();
+       return data;
+
+    } 
+    catch (error) {
+      console.log(error.message)  
+    }
+};
+
+export default createJWT;

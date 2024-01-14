@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import registration from '../../../assets/register.png'
 import Gif from '@/components/Gif';
 import useAuth from '@/hooks/useAuth';
+import createJWT from '@/utils/createJWT';
 
 const Register = () => {
 
@@ -29,6 +30,7 @@ const Register = () => {
             if (!res.ok) throw new Error("Failed to image upload");
             const responseData = await res.json();
             await createUser(email, password);
+            await createJWT({email});
             await profileUpdate({
                 displayName: name,
                 photoUrl: responseData.data.url

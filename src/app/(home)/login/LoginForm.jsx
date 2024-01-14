@@ -1,18 +1,30 @@
 'use client'
 import React from 'react';
 import Image from 'next/image';
-import login from '../../../assets/login2.png';
+import login2 from '../../../assets/login2.png';
 import { useForm } from 'react-hook-form';
 import Link from 'next/link';
 import GoogleLogin from './GoogleLogin';
+import useAuth from '@/hooks/useAuth';
+import createJWT from '@/utils/createJWT';
 
 
 const LoginForm = () => {
+
+  const {login} = useAuth();
   
   const {register, handleSubmit, formState: {errors}} = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async(data) => {
+    const {email, password} = data;
+
+    try {
+      await login(email, password);
+      await createJWT({email})
+    } 
+    catch (error) {
+      console.log(error.message);
+    }
   };
 
   return (
@@ -21,7 +33,7 @@ const LoginForm = () => {
         <div className="flex justify-center items-center">
           <div className="column">
             {/* Use the Image component correctly */}
-            <Image src={login} alt="Login Image" />
+            <Image src={login2} alt="Login Image" />
           </div>
           <div className="column">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
