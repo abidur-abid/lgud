@@ -1,15 +1,47 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { startTransition, useState } from 'react';
 import google from '../../../assets/google.png'
 import useAuth from '@/hooks/useAuth';
 import createJWT from '@/utils/createJWT';
+import { useRouter } from 'next/navigation';
 
-const GoogleLogin = () => {
+const GoogleLogin = ({from}) => {
+
+    
     const {googleLogin} = useAuth();
+    
+
+    const { replace, refresh } = useRouter();
     const handleGoogleLogin = async()=> {
         try {
-            await googleLogin();
-            await createJWT({email})
+            await googleLogin()
+            .then(result => {
+                const name = result.user.displayName;
+                const email = result.user.email;
+                createJWT({email});
+                 const response = fetch('/api/users', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({name, email})
+                })
+
+                if(response.ok){
+                    alert('Done from google log in')
+                }
+
+
+            })
+            
+            
+            
+            
+            startTransition(() => {
+                refresh();
+                replace(from);
+                
+              });
         } 
         catch (error) {
            console.log(error.message) 

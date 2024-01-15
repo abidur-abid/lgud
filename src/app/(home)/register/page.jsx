@@ -1,17 +1,23 @@
 'use client'
+
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { startTransition } from 'react';
 import { useForm } from 'react-hook-form';
-import registration from '../../../assets/register.png'
+import registration from '../../../assets/register.png';
 import Gif from '@/components/Gif';
 import useAuth from '@/hooks/useAuth';
 import createJWT from '@/utils/createJWT';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 const Register = () => {
 
   
     const {createUser, profileUpdate} = useAuth();
+
+    const search = useSearchParams();
+    const from = search.get("redirectUrl") || "/";
+    const {replace, refresh} = useRouter();
 
     const {register, handleSubmit, formState: {errors}} = useForm();
 
@@ -31,9 +37,25 @@ const Register = () => {
             const responseData = await res.json();
             await createUser(email, password);
             await createJWT({email});
+            console.log({name, email})
+            const response = await fetch('/api/users', {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify({name, email})
+            })
+
+            if(response.ok){
+                alert("done properly");
+            }
             await profileUpdate({
                 displayName: name,
                 photoUrl: responseData.data.url
+            });
+            startTransition(()=>{
+                refresh();
+                replace(from)
             })
            
         } catch (error) {
@@ -51,7 +73,7 @@ const Register = () => {
             <div className="container ">
                 <div className="flex justify-center items-center">
                     <div className="column">
-                        <Image src={registration}></Image>
+                        <Image src={registration} alt='Registration Image'></Image>
                     </div>
                     <div className="column">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">

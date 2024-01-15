@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, { startTransition } from 'react';
 import Image from 'next/image';
 import login2 from '../../../assets/login2.png';
 import { useForm } from 'react-hook-form';
@@ -7,11 +7,15 @@ import Link from 'next/link';
 import GoogleLogin from './GoogleLogin';
 import useAuth from '@/hooks/useAuth';
 import createJWT from '@/utils/createJWT';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 
 const LoginForm = () => {
 
   const {login} = useAuth();
+  const search = useSearchParams();
+  const from = search.get("redirectUrl") || "/";
+  const { replace, refresh } = useRouter();
   
   const {register, handleSubmit, formState: {errors}} = useForm();
 
@@ -20,7 +24,13 @@ const LoginForm = () => {
 
     try {
       await login(email, password);
-      await createJWT({email})
+      await createJWT({email});
+      
+      startTransition(() => {
+        refresh();
+        replace(from);
+        
+      });
     } 
     catch (error) {
       console.log(error.message);

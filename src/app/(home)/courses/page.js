@@ -1,7 +1,6 @@
 import SingleCourse from "@/components/SingleCourse";
 import getCourses from "@/utils/getCourses";
-import { Corben } from "next/font/google";
-import Image from "next/image";
+
 
 
 

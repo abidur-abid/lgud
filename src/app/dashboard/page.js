@@ -1,14 +1,17 @@
 "use client"
 import useAuth from '@/hooks/useAuth';
-import React from 'react';
+import React, { startTransition } from 'react';
 import damiProfile from '../../assets/damiprofile.png'
 import Image from 'next/image';
 import { RiLogoutBoxFill } from "react-icons/ri";
+import { usePathname, useRouter } from 'next/navigation';
 
 
 const Dashboard = () => {
 
     const {user, logOut} = useAuth();
+    const { replace, refresh } = useRouter();
+    const path = usePathname();   
 
     const handleLogOut = async()=>{
         try {
@@ -18,6 +21,13 @@ const Dashboard = () => {
             })
 
             await res.json();
+            if (path.includes("/dashboard")) {
+                replace(`/login?redirectUrl=${path}`);
+              }
+              
+              startTransition(() => {
+                refresh();
+              });
         } 
         catch (error) {
           console.log(error.message)  
