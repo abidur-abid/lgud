@@ -10,7 +10,7 @@ const Students = async() => {
 
     return (
         <div className='section my-10'>
-            <div className='container'>
+            <div className='custom-container'>
                 
                         
                         <div className="overflow-x-auto">

@@ -39,7 +39,7 @@ const Dashboard = () => {
     return (
        
         <div className='section my-10'>
-            <div className='container'>
+            <div className='custom-container'>
                 <div>
                     {
                         user && <Image className=' mx-auto rounded-full' width={'150'} height={'150'} src={user.photoURL ? user.photoURL : damiProfile} alt="User Profile Image" ></Image>

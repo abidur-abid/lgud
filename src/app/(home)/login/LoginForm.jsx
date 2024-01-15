@@ -39,13 +39,13 @@ const LoginForm = () => {
 
   return (
     <div className="section my-20">
-      <div className="container">
-        <div className="flex justify-center items-center">
-          <div className="column">
+      <div className="custom-container">
+        <div className="custom-row flex justify-center items-center">
+          <div className="custom-column">
             {/* Use the Image component correctly */}
             <Image src={login2} alt="Login Image" />
           </div>
-          <div className="column">
+          <div className="custom-column">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
 
               <input className='border-2 w-full focus:outline-none bg-transparent border-primaryColor secondaryColor rounded-full text-center text-xl px-10 py-2' type='email' placeholder='Enter Your Email' name='email'

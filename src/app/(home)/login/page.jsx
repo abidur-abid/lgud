@@ -6,7 +6,7 @@ import Gif from '@/components/Gif';
 const Login = () => {
     return (
         <div className="section">
-            <div className="container">
+            <div className="custom-container">
                 <Gif/>
                 <LoginForm/>
                 <Gif/>

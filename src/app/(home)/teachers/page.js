@@ -14,15 +14,15 @@ import Gif from '@/components/Gif';
 const Teachers = () => {
     return (
         <div className='section '>
-            <div className='container'>
+            <div className='custom-container'>
                 <div className='my-10'>
                     <Gif/>
                 </div>
-                <div className="singleTeacher flex justify-center items-center gap-28">
-                    <div className=''>
+                <div className="singleTeacher custom-row flex justify-center items-center gap-28">
+                    <div className='custom-column'>
                         <h4 className='text-xl font-semibold'>Rakibul Islam</h4>
                         <p className='my-4'>Head of the department and <br></br> Assistant Professor</p>
-                        <div className='text-primaryColor text-xl flex gap-5'>
+                        <div className='text-primaryColor text-xl flex gap-5 tablet-social-link mb-8'>
                             <FaFacebook />
                             <BsLinkedin />
                             <FaTwitter />
@@ -30,19 +30,19 @@ const Teachers = () => {
                         </div>
                     </div>
                     
-                    <div className=''>
+                    <div className='custom-column'>
                         <Image src={rakibsir} className='mx-auto'></Image>
                     </div>
                 </div>
                 <div className='my-20'>
                  <Gif/>
                 </div>
-                <div className='singleTeacher flex justify-center items-center gap-28 '>
+                <div className='singleTeacher custom-row flex justify-center items-center gap-28 '>
                 
-                    <div className=''>
+                    <div className='custom-column'>
                         <h4 className='text-xl font-semibold'>Sadia Afroz Tonni</h4>
                         <p className='my-4'> Assistant Professor</p>
-                        <div className='text-primaryColor text-xl flex gap-5'>
+                        <div className='text-primaryColor text-xl flex gap-5 tablet-social-link mb-8'>
                             <FaFacebook />
                             <BsLinkedin />
                             <FaTwitter />
@@ -50,7 +50,7 @@ const Teachers = () => {
                         </div>
                     </div>
 
-                    <div className=''>
+                    <div className='custom-column'>
                         <Image src={tonnimam} className='mx-auto'></Image>
                     </div>
                     
@@ -58,18 +58,18 @@ const Teachers = () => {
                 <div className='my-10'>
                     <Gif/>
                 </div>
-                <div className='singleTeacher flex justify-center items-center gap-28'>
-                    <div className=''>
+                <div className='singleTeacher custom-row flex justify-center items-center gap-28'>
+                    <div className='custom-column'>
                         <h4 className='text-xl font-semibold'>Afroza Islam Lipi</h4>
                         <p className='my-4'> Assistant Professor</p>
-                        <div className='text-primaryColor text-xl flex gap-5'>
+                        <div className='text-primaryColor  text-xl flex gap-5 tablet-social-link mb-8'>
                             <FaFacebook />
                             <BsLinkedin />
                             <FaTwitter />
 
                         </div>
                     </div>
-                    <div className=''>
+                    <div className='custom-column'>
                         <Image src={lipimam} className='mx-auto'></Image>
                     </div>
                 </div>

@@ -70,12 +70,12 @@ const Register = () => {
        <>
        <Gif/>
        <div className="section py-20">
-            <div className="container ">
-                <div className="flex justify-center items-center">
-                    <div className="column">
+            <div className="custom-container ">
+                <div className="custom-row flex justify-center items-center">
+                    <div className="custom-column">
                         <Image src={registration} alt='Registration Image'></Image>
                     </div>
-                    <div className="column">
+                    <div className="custom-column">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
 
                     <input className='border-2 w-full focus:outline-none bg-transparent border-primaryColor secondaryColor rounded-full text-center text-xl px-10 py-2' type='text' placeholder='Enter Your Full Name' name='name'

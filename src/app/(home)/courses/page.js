@@ -11,7 +11,7 @@ const Courses = async() => {
 
     return (
         <div className='section'>
-            <div className='container grid grid-cols-3 gap-5'>
+            <div className='custom-container lg:grid lg:grid-cols-3 gap-5'>
                 {
                     coursesData.map((course) => <SingleCourse key={course._id} course = {course}></SingleCourse>
                     
