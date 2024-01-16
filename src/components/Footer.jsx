@@ -24,7 +24,7 @@ const Footer = () => {
                         <Link className='secondaryColor' href={'/courses'}>Courses</Link> |
                         <Link className='secondaryColor' href={'/teachers'}>Teachers</Link> |
                         <Link className='secondaryColor' href={'/students'}>Students</Link> |
-                        <Image className='w-12 h-12' src={bdFlag}></Image>
+                        <Image className='w-12 h-12' src={bdFlag} alt="Footer Image"></Image>
                     </div>
                 </div>
             </div>

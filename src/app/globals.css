@@ -63,7 +63,7 @@ header,footer
 
 
 .header-custom-row, .footer-custom-row{
-  /* padding: 5px 10px; */
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -94,7 +94,7 @@ common website feature like logo menu image
   position: absolute;
   top: 20px;
   right: 0px;
-  /* background-color: #FECE2F; */
+ 
 }
 
 /*=================================================

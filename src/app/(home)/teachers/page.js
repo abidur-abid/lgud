@@ -31,7 +31,7 @@ const Teachers = () => {
                     </div>
                     
                     <div className='custom-column'>
-                        <Image src={rakibsir} className='mx-auto'></Image>
+                        <Image src={rakibsir} alt="Profile Image" className='mx-auto'></Image>
                     </div>
                 </div>
                 <div className='my-20'>
@@ -51,7 +51,7 @@ const Teachers = () => {
                     </div>
 
                     <div className='custom-column'>
-                        <Image src={tonnimam} className='mx-auto'></Image>
+                        <Image src={tonnimam} alt="Profile Image"  className='mx-auto'></Image>
                     </div>
                     
                 </div>
@@ -70,7 +70,7 @@ const Teachers = () => {
                         </div>
                     </div>
                     <div className='custom-column'>
-                        <Image src={lipimam} className='mx-auto'></Image>
+                        <Image src={lipimam} alt="Profile Image" className='mx-auto'></Image>
                     </div>
                 </div>
             </div>

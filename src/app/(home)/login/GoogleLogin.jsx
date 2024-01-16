@@ -1,9 +1,9 @@
-import Image from 'next/image';
-import React, { startTransition, useState } from 'react';
-import google from '../../../assets/google.png'
-import useAuth from '@/hooks/useAuth';
-import createJWT from '@/utils/createJWT';
-import { useRouter } from 'next/navigation';
+import Image from "next/image";
+import React, { startTransition } from "react";
+import google from "../../../assets/google.png"
+import useAuth from "@/hooks/useAuth";
+import createJWT from "@/utils/createJWT";
+import { useRouter } from "next/navigation";
 
 const GoogleLogin = ({from}) => {
 
@@ -51,7 +51,7 @@ const GoogleLogin = ({from}) => {
         <div className="section">
             <div className="container flex justify-center">
                 
-                <button onClick={handleGoogleLogin} className='flex w-full justify-center gap-2 items-center secondaryColor border-2 border-secondaryColor uppercase px-10 py-3 rounded-full'> <Image src={google} className='w-8 h-8'></Image> Login With Google</button>
+                <button onClick={handleGoogleLogin} className="flex w-full justify-center gap-2 items-center secondaryColor border-2 border-secondaryColor uppercase px-10 py-3 rounded-full"> <Image src={google} alt="Google Image" className="w-8 h-8"></Image> Login With Google</button>
             </div>
         </div>
     );

@@ -13,7 +13,7 @@ const Hero = () => {
             <div className="custom-container">
                 <div className="custom-row">
                     <div className="custom-column">
-                        <Image src={graduation}></Image>
+                        <Image src={graduation} alt="Hero Image"></Image>
                     </div>
                     <div className="custom-column">
                         <h1 className='text-4xl font-bold secondaryColor'>Local Government and Urban Development</h1>

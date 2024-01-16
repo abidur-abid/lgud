@@ -1,11 +1,11 @@
-'use client'
-import React, { startTransition } from 'react';
-import Image from 'next/image';
-import login2 from '../../../assets/login2.png';
-import { useForm } from 'react-hook-form';
-import Link from 'next/link';
-import GoogleLogin from './GoogleLogin';
-import useAuth from '@/hooks/useAuth';
+"use client"
+import React, { startTransition } from "react";
+import Image from "next/image";
+import login2 from "../../../assets/login2.png";
+import { useForm } from "react-hook-form";
+import Link from "next/link";
+import GoogleLogin from "./GoogleLogin";
+import useAuth from "@/hooks/useAuth";
 import createJWT from '@/utils/createJWT';
 import { useRouter, useSearchParams } from 'next/navigation';
 
@@ -42,13 +42,13 @@ const LoginForm = () => {
       <div className="custom-container">
         <div className="custom-row flex justify-center items-center">
           <div className="custom-column">
-            {/* Use the Image component correctly */}
+            
             <Image src={login2} alt="Login Image" />
           </div>
           <div className="custom-column">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
 
-              <input className='border-2 w-full focus:outline-none bg-transparent border-primaryColor secondaryColor rounded-full text-center text-xl px-10 py-2' type='email' placeholder='Enter Your Email' name='email'
+              <input className="border-2 w-full focus:outline-none bg-transparent border-primaryColor secondaryColor rounded-full text-center text-xl px-10 py-2" type="email" placeholder="Enter Your Email" name="email"
               {...register("email", {
                 required: true,
                 pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/,
@@ -61,7 +61,7 @@ const LoginForm = () => {
               </span>
             )}
 
-              <input className='border-2 w-full focus:outline-none bg-transparent border-primaryColor secondaryColor rounded-full text-center text-xl px-10 py-2 my-1' type='password' placeholder='Enter Your PassWord' name='password'
+              <input className="border-2 w-full focus:outline-none bg-transparent border-primaryColor secondaryColor rounded-full text-center text-xl px-10 py-2 my-1" type="password" placeholder="Enter Your PassWord" name="password"
               {...register("password", { required: true, minLength: 6 })}
               />
               
@@ -70,10 +70,10 @@ const LoginForm = () => {
                   Please enter a password.
                 </span>
               )} 
-              <input className=' button w-full  rounded-full text-center text-xl px-10 py-2 border-primaryColor' type='submit'/>
+              <input className="button w-full  rounded-full text-center text-xl px-10 py-2 border-primaryColor" type="submit"/>
             </form>
             <GoogleLogin/>
-            <p className='text-center  mt-8 secondaryColor'><Link href={'/register'}> If You Don't Have Any Account, <br /> Please Register.</Link></p>
+            <p className="text-center  mt-8 secondaryColor"><Link href={"/register"}> If You Don't Have Any Account, <br /> Please Register.</Link></p>
           </div>
         </div>
       </div>
